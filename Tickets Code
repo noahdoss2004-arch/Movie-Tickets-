@@ -1,0 +1,22 @@
+
+
+total_cost = 0
+
+# Ask the user for the number of tickets
+num_tickets = int(input("How many tickets do you want to purchase? "))
+
+# Loop through each ticket holder
+for i in range(num_tickets):
+    age = int(input(f"Enter the age of ticket holder #{i+1}: "))
+
+    if age < 3:
+        price = 0
+    elif age <= 12:
+        price = 10
+    else:
+        price = 15
+
+    total_cost += price
+
+# Display total cost
+print("\nTotal cost of tickets: $" + str(total_cost))
