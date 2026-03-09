@@ -2,12 +2,22 @@
 
 total_cost = 0
 
-# Ask the user for the number of tickets
-num_tickets = int(input("How many tickets do you want to purchase? "))
+# Ask for number of tickets with validation
+while True:
+    try:
+        num_tickets = int(input("How many tickets do you want to purchase? "))
+        break
+    except ValueError:
+        print("Please enter a valid number.")
 
-# Loop through each ticket holder
+# Loop through ticket holders
 for i in range(num_tickets):
-    age = int(input(f"Enter the age of ticket holder #{i+1}: "))
+    while True:
+        try:
+            age = int(input(f"Enter the age of ticket holder #{i+1}: "))
+            break
+        except ValueError:
+            print("Please enter a valid age.")
 
     if age < 3:
         price = 0
@@ -18,5 +28,6 @@ for i in range(num_tickets):
 
     total_cost += price
 
-# Display total cost
 print("\nTotal cost of tickets: $" + str(total_cost))
+
+
